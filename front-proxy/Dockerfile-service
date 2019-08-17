@@ -1,0 +1,9 @@
+FROM dio123/envoy-zipkin:1.experimental
+
+RUN apt-get update && apt-get install -yqq python3 python3-pip curl
+RUN pip3 install -q Flask==0.11.1 requests==2.18.4
+RUN mkdir /code
+ADD ./service.py /code
+ADD ./start_service.sh /usr/local/bin/start_service.sh
+RUN chmod u+x /usr/local/bin/start_service.sh
+ENTRYPOINT /usr/local/bin/start_service.sh
