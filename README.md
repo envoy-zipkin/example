@@ -27,7 +27,6 @@ tracing:
       "@type": type.googleapis.com/envoy.config.trace.v2.ZipkinConfig
       collector_cluster: zipkin
       collector_endpoint: "/api/v1/spans"
-      collector_endpoint_version: HTTP_JSON_V1
 ```
 
 ### HTTP_JSON_V2
